@@ -1,7 +1,7 @@
 def jogar_forca():
 
     import random
-    import lista_palavras # lista de 20 palavras possíveis para acertar
+    import lista_palavras # lista de 19 palavras possíveis para acertar
     from unidecode import unidecode
 
     palavra = random.choice(lista_palavras.palavras)
