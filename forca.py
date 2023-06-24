@@ -1,6 +1,6 @@
 def jogar_forca():
 
-    import random
+    import random # escolher um palavra da lista oculta
     import lista_palavras # lista de 19 palavras possíveis para acertar
     from unidecode import unidecode
 
