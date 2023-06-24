@@ -1,10 +1,10 @@
 def jogar_forca():
 
-    import random # escolher um palavra da lista oculta
+    import random 
     import lista_palavras # lista de 19 palavras possíveis para acertar
     from unidecode import unidecode
 
-    palavra = random.choice(lista_palavras.palavras)
+    palavra = random.choice(lista_palavras.palavras) # escolhe uma palavra da lista oculta
     palavra_sem_acento = unidecode(palavra)
     silhueta_palavra = []
     letras_digitadas = []
@@ -28,14 +28,14 @@ def jogar_forca():
     # roda o jogo até ganhar ou enforcar
     while(not enforcou and not acertou):
 
-        # é mostrado sempre o histórico de letras digitadas
-        # Exemplo = Histórico: a, g, j, e
+        # mostra sempre o histórico de letras digitadas pelo user
+        # exemplo = Histórico: a, g, j, e
         print("Histórico:", ",".join(letras_digitadas))
 
-        # é mostrado sempre a qtd atual de tentativas 
+        # mostra sempre a quantidade atual de tentativas 
         print(f"Tentativas: {tentativas}")    
 
-        # O usuário digita uma letra ou chute de cada vez
+        # O usuário digita uma letra ou um chute de cada vez
         saida_user = (str(input("Digite: "))).lower()
 
         if saida_user in letras_digitadas:
@@ -46,7 +46,7 @@ def jogar_forca():
 
             letras_digitadas.append(saida_user)
              
-            # verifica se a letra está na palavra
+            # verifica se a letra digitada pelo user está na palavra
             for letra in palavra_sem_acento:
                 if letra == saida_user:
                     silhueta_palavra[i] = palavra[i]    
@@ -55,11 +55,11 @@ def jogar_forca():
 
             silhueta_na_tela = "".join(silhueta_palavra)
 
-            # se a letra não estiver na palavra
+            # se a letra digitada pelo user não estiver na palavra
             if saida_user not in palavra_sem_acento:
                 tentativas -= 1
 
-            # mostra ao user a silhueta da palavra
+            # mostra sempre ao user a silhueta da palavra
             print("\n", "".join(silhueta_palavra), "\n")
 
         # se o user digitou todas as letras corretas antes da forca
